@@ -1,0 +1,220 @@
+This is TeX, Version 3.14159265 (TeX Live 2016/Arch Linux) (preloaded format=tex 2016.10.10)  13 OCT 2016 19:25
+**\section{Estructura de Datos: Pr^^c3^^a1ctica
+
+*\emph{\textbf{Alejandro N^^c3^^ba^^c3^^b1ez P^^c3^^a9rez}}
+! Undefined control sequence.
+<*> \emph
+         {\textbf{Alejandro N^^c3^^ba^^c3^^b1ez P^^c3^^a9rez}}
+? 
+! Undefined control sequence.
+<*> \emph{\textbf
+                 {Alejandro N^^c3^^ba^^c3^^b1ez P^^c3^^a9rez}}
+? \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
+Type <return> to proceed, S to scroll future error messages,
+R to run without stopping, Q to run quietly,
+I to insert something, 
+1 or ... or 9 to ignore the next 1 to 9 tokens of input,
+H for help, X to quit.
+? 
+Missing character: There is no ^^c3 in font cmr10!
+Missing character: There is no ^^ba in font cmr10!
+Missing character: There is no ^^c3 in font cmr10!
+Missing character: There is no ^^b1 in font cmr10!
+Missing character: There is no ^^c3 in font cmr10!
+Missing character: There is no ^^a9 in font cmr10!
+
+*\subsection{Ejercicio 1}\label{ejercicio-1}
+! Undefined control sequence.
+<*> \subsection
+               {Ejercicio 1}\label{ejercicio-1}
+? 
+! Undefined control sequence.
+<*> \subsection{Ejercicio 1}\label
+                                  {ejercicio-1}
+? La eficiencia te^^c3^^b3rica del algoritmo \emph{Bubble Sort} es del ^^c3^^b3
+rden
+Type <return> to proceed, S to scroll future error messages,
+R to run without stopping, Q to run quietly,
+I to insert something, 
+1 or ... or 9 to ignore the next 1 to 9 tokens of input,
+H for help, X to quit.
+? \emph{O(n\^{}2)}
+Type <return> to proceed, S to scroll future error messages,
+R to run without stopping, Q to run quietly,
+I to insert something, 
+1 or ... or 9 to ignore the next 1 to 9 tokens of input,
+H for help, X to quit.
+? 
+
+*\begin{Shaded}
+! Undefined control sequence.
+<*> \begin
+          {Shaded}
+? \begin{Highlighting}[]
+Type <return> to proceed, S to scroll future error messages,
+R to run without stopping, Q to run quietly,
+I to insert something, 
+1 or ... or 9 to ignore the next 1 to 9 tokens of input,
+H for help, X to quit.
+? \DataTypeTok{void} \NormalTok{ordenar(}\DataTypeTok{int} \NormalTok{*v, }\Dat
+aTypeTok{int} \NormalTok{n) \{}
+Type <return> to proceed, S to scroll future error messages,
+R to run without stopping, Q to run quietly,
+I to insert something, 
+1 or ... or 9 to ignore the next 1 to 9 tokens of input,
+H for help, X to quit.
+?     \ControlFlowTok{for}\NormalTok{(}\DataTypeTok{int} \NormalTok{i = }\DecVa
+lTok{0}\NormalTok{; i < (n}\DecValTok{-1}\NormalTok{); i++) \{}
+Type <return> to proceed, S to scroll future error messages,
+R to run without stopping, Q to run quietly,
+I to insert something, 
+1 or ... or 9 to ignore the next 1 to 9 tokens of input,
+H for help, X to quit.
+?         \ControlFlowTok{for}\NormalTok{(}\DataTypeTok{int} \NormalTok{j = }\D
+ecValTok{0}\NormalTok{; j < (n-i}\DecValTok{-1}\NormalTok{); j++) \{}
+Type <return> to proceed, S to scroll future error messages,
+R to run without stopping, Q to run quietly,
+I to insert something, 
+1 or ... or 9 to ignore the next 1 to 9 tokens of input,
+H for help, X to quit.
+?             \ControlFlowTok{if}\NormalTok{(v[j] > v[j}\DecValTok{+1}\NormalTo
+k{]) \{}
+Type <return> to proceed, S to scroll future error messages,
+R to run without stopping, Q to run quietly,
+I to insert something, 
+1 or ... or 9 to ignore the next 1 to 9 tokens of input,
+H for help, X to quit.
+?                 \DataTypeTok{int} \NormalTok{aux = v[j];}
+Type <return> to proceed, S to scroll future error messages,
+R to run without stopping, Q to run quietly,
+I to insert something, 
+1 or ... or 9 to ignore the next 1 to 9 tokens of input,
+H for help, X to quit.
+?                 \NormalTok{v[j] = v[j}\DecValTok{+1}\NormalTok{];}
+Type <return> to proceed, S to scroll future error messages,
+R to run without stopping, Q to run quietly,
+I to insert something, 
+1 or ... or 9 to ignore the next 1 to 9 tokens of input,
+H for help, X to quit.
+?                 \NormalTok{v[j}\DecValTok{+1}\NormalTok{] = aux;}
+Type <return> to proceed, S to scroll future error messages,
+R to run without stopping, Q to run quietly,
+I to insert something, 
+1 or ... or 9 to ignore the next 1 to 9 tokens of input,
+H for help, X to quit.
+?             \NormalTok{\}}
+Type <return> to proceed, S to scroll future error messages,
+R to run without stopping, Q to run quietly,
+I to insert something, 
+1 or ... or 9 to ignore the next 1 to 9 tokens of input,
+H for help, X to quit.
+?         \NormalTok{\} }\CommentTok{//for-j}
+Type <return> to proceed, S to scroll future error messages,
+R to run without stopping, Q to run quietly,
+I to insert something, 
+1 or ... or 9 to ignore the next 1 to 9 tokens of input,
+H for help, X to quit.
+?     \NormalTok{\} }\CommentTok{//for-i}
+Type <return> to proceed, S to scroll future error messages,
+R to run without stopping, Q to run quietly,
+I to insert something, 
+1 or ... or 9 to ignore the next 1 to 9 tokens of input,
+H for help, X to quit.
+? \NormalTok{\}}
+Type <return> to proceed, S to scroll future error messages,
+R to run without stopping, Q to run quietly,
+I to insert something, 
+1 or ... or 9 to ignore the next 1 to 9 tokens of input,
+H for help, X to quit.
+? \end{Highlighting}
+Type <return> to proceed, S to scroll future error messages,
+R to run without stopping, Q to run quietly,
+I to insert something, 
+1 or ... or 9 to ignore the next 1 to 9 tokens of input,
+H for help, X to quit.
+? \end{Shaded}
+Type <return> to proceed, S to scroll future error messages,
+R to run without stopping, Q to run quietly,
+I to insert something, 
+1 or ... or 9 to ignore the next 1 to 9 tokens of input,
+H for help, X to quit.
+? 
+
+*Al superponer la gr^^c3^^a1fica de la eficiencia te^^c3^^b3rica y de la eficie
+ncia
+Missing character: There is no ^^c3 in font cmr10!
+Missing character: There is no ^^a1 in font cmr10!
+Missing character: There is no ^^c3 in font cmr10!
+Missing character: There is no ^^b3 in font cmr10!
+
+*emp^^c3^^adrica, obtenemos que, aunque tienen el mismo ^^c3^^b3rden de crecimi
+ento,
+Missing character: There is no ^^c3 in font cmr10!
+Missing character: There is no ^^ad in font cmr10!
+Missing character: There is no ^^c3 in font cmr10!
+Missing character: There is no ^^b3 in font cmr10!
+
+*los valores son muy dispares: los datos emp^^c3^^adricos no est^^c3^^a1n ajust
+ados a
+Missing character: There is no ^^c3 in font cmr10!
+Missing character: There is no ^^ad in font cmr10!
+Missing character: There is no ^^c3 in font cmr10!
+Missing character: There is no ^^a1 in font cmr10!
+
+*la funci^^c3^^b3n de la curva.
+Missing character: There is no ^^c3 in font cmr10!
+Missing character: There is no ^^b3 in font cmr10!
+
+*
+(Please type a command or say `\end')
+*\begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
+! Undefined control sequence.
+<*> \begin
+          {center}\rule{0.5\linewidth}{\linethickness}\end{center}
+? 
+! Undefined control sequence.
+<*> \begin{center}\rule
+                       {0.5\linewidth}{\linethickness}\end{center}
+? \subsection{Ejercicio 2}\label{ejercicio-2}
+Type <return> to proceed, S to scroll future error messages,
+R to run without stopping, Q to run quietly,
+I to insert something, 
+1 or ... or 9 to ignore the next 1 to 9 tokens of input,
+H for help, X to quit.
+? 
+! Undefined control sequence.
+<*> \begin{center}\rule{0.5\linewidth
+                                     }{\linethickness}\end{center}
+? Al ajustar los datos emp^^c3^^adricos con la funci^^c3^^b3n de la curva, obte
+nemos una
+Type <return> to proceed, S to scroll future error messages,
+R to run without stopping, Q to run quietly,
+I to insert something, 
+1 or ... or 9 to ignore the next 1 to 9 tokens of input,
+H for help, X to quit.
+? gr^^c3^^a1fica mucho m^^c3^^a1s pareja al ^^c3^^b3rden \emph{O(n\^{}2)} del a
+lgoritmo
+Type <return> to proceed, S to scroll future error messages,
+R to run without stopping, Q to run quietly,
+I to insert something, 
+1 or ... or 9 to ignore the next 1 to 9 tokens of input,
+H for help, X to quit.
+? \emph{Bubble Sort}. \emph{(Ver figura 1)}
+Type <return> to proceed, S to scroll future error messages,
+R to run without stopping, Q to run quietly,
+I to insert something, 
+1 or ... or 9 to ignore the next 1 to 9 tokens of input,
+H for help, X to quit.
+? 
+! Undefined control sequence.
+<*> ...{center}\rule{0.5\linewidth}{\linethickness
+                                                  }\end{center}
+? \begin{center}\rule{0.5\linewidth}{\linethickness}\end{center}
+Type <return> to proceed, S to scroll future error messages,
+R to run without stopping, Q to run quietly,
+I to insert something, 
+1 or ... or 9 to ignore the next 1 to 9 tokens of input,
+H for help, X to quit.
+? 
+[1]
+Output written on texput.dvi (1 page, 584 bytes).
