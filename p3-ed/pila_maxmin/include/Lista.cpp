@@ -4,8 +4,10 @@
 
 #include "Lista.h"
 
+#include <stdexcept>
+
 template<typename T>
-void Lista<T>::copy_from(const Lista<T>& o) const {
+void Lista<T>::copy_from(const Lista<T>& o) {
 	if(origin != nullptr) delete origin;
 
 	this->origin = o.origin;
@@ -30,28 +32,41 @@ Lista<T>::~Lista() {
 
 template<typename T>
 Lista<T>& Lista<T>::operator=(const Lista& o) {
-	if(o != (*this)) {
+	if(&o != this) {
 		copy_from(o);
 	}
 }
 
 template<typename T>
 void Lista<T>::insert(unsigned pos, T value) {
-	if(pos < 0 || pos >= size) {
-		// error: throw exception?
+	if(pos < 0 || pos > length) {
+        throw new std::out_of_range("0 <= pos < this->size()");
 	}
 
-	Lista::Cell c = origin;
+    if(pos == 0) {
+        origin = new Lista<T>::Cell(value, origin);
 
-	for(unsigned i = 0; i < pos; ++i) {
-		c = &(c.next);
-	}
+    } else {
+        // Empezamos en el origen
+        Lista<T>::Cell *c = origin;
 
-	Lista::Cell *c_tmp = c.next;
-	c.next = new Lista::Cell;
+        // Recorremos hasta obtener la posición buscada
+        for(unsigned i = 1; i < pos; ++i) {
+            c = c->next;
+        }
 
-	(*c.next).value = value;
-	(*c.next).next = c_tmp;
+        if(c->next == nullptr) {
+            c->next = new Lista<T>::Cell(value);
+        }
+        else {
+            // c almacena el valor de la posición buscada
+            // c_tmp almacena la posible siguiente celda
+            Lista<T>::Cell *c_tmp = (c->next);
+
+            // Creamos una nueva celda y la asignamos a la posición siguiente
+            c->next = new Lista<T>::Cell(value, c_tmp);
+        }
+    }
 
 	// Acabamos incrementando el tamaño de nuestra lista.
 	++(this->length);
@@ -59,39 +74,48 @@ void Lista<T>::insert(unsigned pos, T value) {
 
 template<typename T>
 void Lista<T>::remove(unsigned pos) {
-	if(pos < 0 || pos >= size) {
-		// error: throw exception?
+	if(pos < 0 || pos > length) {
+		throw new std::out_of_range("0 <= pos < this->size()");
 	}
 
-	Lista::Cell c = origin;
+    // Empezamos en el origen
+    Lista<T>::Cell *c = origin;
 
-	for(unsigned i = 0; i < pos; ++i) {
-		c = &(c.next);
-	}
+    // Recorremos hasta obtener la posición buscada
+    for (unsigned i = 1; i < pos; ++i) {
+        c = c->next;
+    }
 
-	Lista::Cell c_tmp = c.next;
-	c.next = c_tmp.next;
+    // c almacena el valor de la posición buscada
+    // c_tmp almacena la posible siguiente celda
+    Lista<T>::Cell *c_tmp = (c->next);
 
-	c_tmp.next = nullptr;
-	delete &c;
+    // c.next.next = c.next
+    c->next = c_tmp->next;
 
-	// Acabamos incrementando el tamaño de nuestra lista.
+    c_tmp->next = nullptr;
+    delete &c;
+
+	// Acabamos decrementando el tamaño de nuestra lista.
 	--(this->length);
 }
 
 template<typename T>
 const T& Lista<T>::peek(unsigned pos) const {
-	if(pos < 0 || pos >= size) {
-		// error: throw exception?
+	if(pos < 0 || pos > length) {
+        throw new std::out_of_range("0 <= pos < this->size()");
 	}
 
-	Lista::Cell c = origin;
+    // Empezamos en el origen
+    Lista<T>::Cell *c = origin;
 
-	for(unsigned i = 1; i < pos; ++i) {
-		c = &(c.next);
-	}
+    // Recorremos hasta obtener la posición buscada
+    for(unsigned i = 0; i < pos; ++i) {
+        c = c->next;
+    }
 
-	return c.value;
+    return c->value;
+
 }
 
 #endif
