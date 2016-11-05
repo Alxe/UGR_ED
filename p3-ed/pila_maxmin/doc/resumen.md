@@ -12,7 +12,7 @@ Colección de datos abstracta que representa un conjunto de datos con acceso ale
 Lista
 ---
 
-Colección de datos abstracta que representa un conjunto de datos con acceso ordenado de doble sentido.
+Colección de datos abstracta que representa un conjunto de datos con acceso secuencial.
 
 Cola
 ---
