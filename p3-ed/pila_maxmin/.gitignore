@@ -1,0 +1,9 @@
+# Ignorar documentacion
+doc/html/
+doc/latex/
+
+# Ignorar carpeta de datos
+datos/
+
+# Ignorar archios de IDE de IntelliJ
+.idea
