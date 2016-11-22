@@ -1,5 +1,12 @@
-# Ignorar todos los archivos objeto
+# Directorios de binarios
+*/bin/*
+
+# Archivos objeto
 *.o
 
-# Ignorar todos los archivos temporales
+# Archivos temporales
 *~
+*.bak
+
+# Archivos de projecto de JetBrains
+*/.idea/*
