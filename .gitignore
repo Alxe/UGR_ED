@@ -9,4 +9,4 @@
 *.bak
 
 # Archivos de projecto de JetBrains
-*/.idea/*
+.idea/*
