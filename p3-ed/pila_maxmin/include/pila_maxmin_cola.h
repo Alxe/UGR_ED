@@ -2,9 +2,9 @@
 #ifndef __PILA_MAXMIN_COLA_H
 #define __PILA_MAXMIN_COLA_H
 
-#include "Cola.h"
+#include "cola.h"
 
-class Pila {
+class Pila_maxmin {
 private:
 	Cola<elemento> datos;
 
@@ -13,11 +13,11 @@ public:
 
 	bool vacia() const;
 
-	void poner(const T& v);
+	void poner(const int& v);
 
 	void quitar();
 
-	int size() const;
+	inline int size() const { return datos.num_elementos(); }
 
 };
 

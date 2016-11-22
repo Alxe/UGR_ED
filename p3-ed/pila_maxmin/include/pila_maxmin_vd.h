@@ -2,9 +2,9 @@
 #ifndef __PILA_MAXMIN_VD_H
 #define __PILA_MAXMIN_VD_H
 
-#include "VD.h"
+#include "vd.h"
 
-class Pila {
+class Pila_maxmin {
 private:
 	VD<elemento> datos;
 
@@ -13,11 +13,11 @@ public:
 
 	bool vacia() const;
 
-	void poner(const T& v);
+	void poner(const int& v);
 
 	void quitar();
 
-	int size() const;
+	inline int size() const { return datos.size(); }
 
 };
 

@@ -27,7 +27,11 @@ class Lista {
          * @param next Puntero a la siguiente Celda enlazada
          * @return Una Celda con valor inicial y enlace a otra celda.
          */
-        inline Cell(T value, Cell *next) { { this->value = value; this->next = next; }}
+        Cell(T value, Cell *next);
+
+        Cell(const Cell& o) : Cell(o.value, o.next) {}
+
+        Cell& operator=(const Cell& o);
 
         /**
          * @brief Destructor de Celda
@@ -36,8 +40,8 @@ class Lista {
 	};
 
 private:
-	Cell *origin; /*< Puntero a la primera Celda */
-	unsigned length; /*< Tamaño de datos enlazados */
+	Cell *origin = nullptr; /*< Puntero a la primera Celda */
+	unsigned length = 0; /*< Tamaño de datos enlazados */
 
     /**
      * @brief Función auxiliar para copiar todos los datos de otra Lista
@@ -119,6 +123,6 @@ public:
 
 };
 
-#include "Lista.cpp"
+#include "lista.cpp"
 
 #endif

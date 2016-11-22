@@ -2,7 +2,9 @@
 #ifndef __VD_CPP
 #define __VD_CPP
 
-#include "VD.h"
+#include "vd.h"
+
+#include <stdexcept>
 
 template<typename T>
 void VD<T>::copy_from(const VD& o) {
@@ -20,7 +22,7 @@ void VD<T>::copy_from(const VD& o) {
 template<typename T>
 void VD<T>::resize(const unsigned capacity) {
 	if(capacity < 0) {
-		// error: throw exception?
+//		throw new std::out_of_range("0 <= pos < this->size()");
 	}
 
 	T *data_new = new T[capacity];
@@ -60,7 +62,7 @@ VD<T>::~VD() {
 
 template<typename T>
 VD<T>& VD<T>::operator=(const VD& o) {
-	if(o != (*this)) {
+	if(&o != this) {
 		copy_from(o);
 	}
 }
@@ -69,36 +71,25 @@ VD<T>& VD<T>::operator=(const VD& o) {
 template<typename T>
 const T& VD<T>::operator[](unsigned pos) const {
 	if(pos < 0 || pos >= capacity) {
-		// error: throw exception?
+//		throw new std::out_of_range("0 <= pos < this->size()");
 	}
 
 	return data[pos];
 }
-
-
-template<typename T>
-T& VD<T>::operator[](unsigned pos) {
-	if(pos < 0 || pos >= capacity) {
-		// error: throw exception?
-	}
-
-	return data[pos];
-}
-
 
 template<typename T>
 void VD<T>::insert(unsigned pos, T value) {
-	if(pos < 0 || pos >= capacity) {
-		// error: throw exception?
+	if(pos < 0 || pos > size()) {
+//		throw new std::out_of_range("0 <= pos < this->size()");
 	}
 
 	if (length == capacity) {
 		resize(capacity+10);
 	}
 
-	for(unsigned i = length; i > pos; --i) {
-		data[i] = data[i-1];
-	}
+    for(unsigned i = length; i > pos; --i) {
+        data[i] = data[i-1];
+    }
 
 	data[pos] = value;
 	++(this->length);
@@ -107,15 +98,16 @@ void VD<T>::insert(unsigned pos, T value) {
 
 template<typename T>
 void VD<T>::remove(unsigned pos) {
-	if(pos < 0 || pos >= length) {
-		// error: throw exception?
+	if(pos < 0 || pos > length) {
+//		throw new std::out_of_range("0 <= pos < this->size()");
 	}
 
-	for(unsigned i = length; i >= pos; --i) {
-		data[i] = data[i-1];
-	}
 
-	--(this->length);
+    for(unsigned i = pos; i < length-1; ++i) {
+        data[i] = data[i+1];
+    }
+
+    --(this->length);
 }
 
  #endif
